@@ -310,10 +310,17 @@ def main():
     exit(2)
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-f', '--favorite', type=str, help='add current dir as favorite with tag')
+parser.add_argument('-f', '--favorite', type=str, help='add current dir to favorite with tag')
 parser.add_argument('-l', '--listall', action='store_true', help='list all memorized dirs')
 parser.add_argument('-d', '--delete', type=str, help='delete a dir with full tag')
 parser.add_argument('--init', action='store_true', help='init f')
+_raw_help = parser.print_help
+
+
+def _print_help():
+    _raw_help(file=sys.stderr)
+    exit(2)
+parser.print_help = _print_help
 
 if __name__ == '__main__':
     main()
