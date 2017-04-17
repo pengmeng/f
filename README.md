@@ -1,5 +1,5 @@
 ## f
-A favorite folder facility
+A favorite folder facility, to help you get rid of endless `cd`s.
 
 ### Install
 The `install.sh` script will create `~/.f` and link `f.py` to this directory, and wrap `f.py` in a function in `
